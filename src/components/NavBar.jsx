@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import {PDFDownloadLink} from '@react-pdf/renderer';
+import {Toaster,toast} from 'sonner'
 import logo from '../assets/LOGO_MIGUEL_CABRERA.png';
+import PDFDocument from './pdf/PDFDocument'
 
 const NavBar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -57,6 +60,29 @@ const NavBar = () => {
               </a>
             </li>
           ))}
+        {/* PDF Dowload Button */}
+        <li className='md:ml-5 text-xl mb-4 md:mb-0'>
+          <Toaster position='bottom-center'/>
+          <PDFDownloadLink document={<PDFDocument/>}
+            fileName='MiguelCabreraVictoria.pdf'>
+              {({loading, url, error,blob})=>(
+                loading ? (
+                  <button className=''>
+                    Loading File
+                    </button>
+                ):(<button className='bg-[#b1a9a1] rounded p-1 font-bold hover:bg-[#7b7171b6] hover:text-[#FEFAE0]'
+                    onClick={()=>{
+                      toast.success("Downloaded",{
+                        duration:5000
+                      });
+                    }}
+                >
+                    MY CV
+                  </button>)
+              )}
+          
+          </PDFDownloadLink>
+        </li>
         </ul>
       </div>
     </div>
