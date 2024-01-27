@@ -1,0 +1,60 @@
+{
+    "projects":[
+        {
+            "id":1,
+            "name": "Personal Portfolio",
+            "stack":["React", "Tailwind CSS", "Firebase"],
+            "link":""
+        },
+        {
+            "id": 2,
+            "name": "Video Game",
+            "stack": ["Unity", "C#", "HTML","CSS","Node.js", "SQL"],
+            "link": "https://github.com/MiguelCabreraVictoria/DAMIJODA_GAME"
+        },
+        {
+            "id": 3,
+            "name": "Ticket System",
+            "stack": ["React-Admin", "Tailwind CSS", "Node.js","MongoDB"],
+            "link":"https://github.com/pridapablo/ITESM-TICKETS-TC2007B"
+        }
+    ],
+    "stack":[
+        {
+            "id": 1,
+            "tech": "HTML",
+            "image": "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png"
+            
+          },
+          {
+            "id": 2,
+            "tech": "CSS",
+            "image": "https://cdn.iconscout.com/icon/free/png-256/free-css-38-226095.png?f=webp"
+          },
+          {
+            "id": 3,
+            "tech": "JavaScript",
+            "image": "https://icons.veryicon.com/png/o/business/vscode-program-item-icon/javascript-3.png"
+          },
+          {
+            "id": 4,
+            "tech": "Python",
+            "image": "https://qwestore.com/png_images_min/10/The-Python-Logo-PNG-Projects-and-companies-that-7328.png"
+          },
+          {
+            "id": 5,
+            "tech": "SQL",
+            "image": "https://www.shareicon.net/data/256x256/2015/09/06/96676_file_512x512.png"
+          },
+          {
+            "id": 6,
+            "tech": "MongoDB",
+            "image": "https://cdn.iconscout.com/icon/free/png-256/free-mongodb-5-1175140.png"
+          },
+          {
+            "id": 7,
+            "tech": "Linux",
+            "image": "https://images.vexels.com/media/users/3/140692/isolated/lists/72d1f12edf758d24f5b6db73bac4f297-linux-logo.png"
+          }
+        ]
+}
