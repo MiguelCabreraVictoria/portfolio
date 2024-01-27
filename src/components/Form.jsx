@@ -1,5 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { Toaster, toast } from 'sonner';
+import {collection, addDoc} from 'firebase/firestore';
+
+import {db} from '../lib/firebaseConnection'
 
 const Form = () => {
   const {
@@ -8,9 +11,11 @@ const Form = () => {
     formState: { errors }
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     try {
       console.log('Form Data: ', data);
+      const docData = await addDoc(collection(db,'users'),
+      {data:data})
       toast.success('Form Submitted successfully 😉', {
         description: `${data.name} thank you for your message. I will be in contact with you`,
         duration: 5000
