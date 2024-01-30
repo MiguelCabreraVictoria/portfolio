@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,5 +6,6 @@
 
 body
 {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Geologica', sans-serif;
+    background-color: #d0cfcf;
 }
