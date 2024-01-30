@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { Toaster, toast } from 'sonner';
-import logo from '../assets/LOGO_MIGUEL_CABRERA.png';
 import PDFDocument from './pdf/PDFDocument';
+import curriculumIcon from '../assets/curriculum.png';
 
 const NavBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -19,51 +19,45 @@ const NavBar = () => {
   };
 
   return (
-    <div className='w-full  top-0 left-0'>
+    <div className='w-full top-0 left-0'>
       <div className='md:flex items-center justify-between px-4 bg-[#b6b5b5e4] border-black border-b-4 py-2'>
         <div className='flex items-center'>
-          <div className=' flex font-bold text-2xl cursor-pointer '>
+          <div className='flex font-bold text-2xl cursor-pointer'>
             <span className='text-3xl text-gray-400'>
               <ul
-                  className={`${
-                    toggleMenu
-                      ? 'flex-col md:flex-row md:items-center md:pb-2 pb-12 pr-4 mt-2'
-                      : 'hidden'
-                  } md:flex md:items-center`}
+                className={`${
+                  toggleMenu
+                    ? 'flex-col md:flex-row md:items-center md:pb-2 pb-12 pr-4 mt-2'
+                    : 'hidden'
+                } md:flex md:items-center`}
               >
-            {Links.map((link, index) => (
-              <li key={index} className='md:ml-5 text-xl mb-4 md:mb-0'>
-                <a
-                  href={link.link}
-                  className='text-black font-bold '
-                >
-                  {link.name}
-                </a>
-              </li>
-        ))}
-        {/* PDF Download Button */}
-        <li className='md:ml-5 text-xl mb-4 md:mb-0'>
-          <Toaster position='bottom-center' />
-          <PDFDownloadLink document={<PDFDocument />} fileName='MiguelCabreraVictoria.pdf'>
-            {({ loading }) => (
-              <button
-                className={`bg-black text-[#e1dada] rounded p-1 font-bold hover:bg-[#7b7171b6] hover:text-[#FEFAE0] ${
-                  loading ? 'cursor-not-allowed' : ''
-                }`}
-                onClick={() => {
-                  if (!loading) {
-                    toast.success('Downloaded', {
-                      duration: 5000,
-                    });
-                  }
-                }}
-              >
-                {loading ? 'Loading File' : 'MY CV'}
-              </button>
-            )}
-          </PDFDownloadLink>
-        </li>
-      </ul>
+                {Links.map((link, index) => (
+                  <li key={index} className='md:ml-5 text-xl mb-4 md:mb-0'>
+                    <a
+                      href={link.link}
+                      className='text-black font-bold '
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+                {/* PDF Download Button */}
+                <li className='md:ml-5 text-xl mb-4 md:mb-0'>
+                  <Toaster position='bottom-center' />
+                  <PDFDownloadLink document={<PDFDocument />} fileName='MiguelCabreraVictoria.pdf'>
+                    {({ loading }) => (
+                      <img src={curriculumIcon} className='w-8 h-auto md:ml-[950px] cursor-pointer' 
+                       onClick={()=>{
+                          if (!loading){
+                            toast.success('CV Downloaded',{
+                              duration:5000
+                            });
+                          }
+                       }}/>
+                    )}
+                  </PDFDownloadLink>
+                </li>
+              </ul>
             </span>
           </div>
         </div>
@@ -85,7 +79,6 @@ const NavBar = () => {
           </svg>
         </div>
       </div>
-      
     </div>
   );
 };
